@@ -1,0 +1,10 @@
+{
+  "nav": {
+    "reader": "Reader",
+    "quiz": "Quiz",
+    "community": "Community"
+  },
+  "app": {
+    "title": "Hackathon App"
+  }
+}

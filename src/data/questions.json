@@ -1,0 +1,5 @@
+[
+  { "id": "q1", "difficulty": "medium", "text": "Placeholder medium question?", "options": ["A", "B", "C", "D"], "answer": "A" },
+  { "id": "q2", "difficulty": "easy", "text": "Placeholder easy question?", "options": ["A", "B", "C", "D"], "answer": "B" },
+  { "id": "q3", "difficulty": "hard", "text": "Placeholder hard question?", "options": ["A", "B", "C", "D"], "answer": "C" }
+]
