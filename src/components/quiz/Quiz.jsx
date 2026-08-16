@@ -17,6 +17,21 @@ export default function Quiz() {
           <p>{content.description}</p>
         </div>
 
+        <div className="activity-list" aria-label="Recent activity preview">
+          <div className="activity-row">
+            <span>Chapter 1</span>
+            <span className="activity-indicator complete" aria-hidden="true">✓</span>
+          </div>
+          <div className="activity-row">
+            <span>Chapter 2</span>
+            <span className="activity-indicator" aria-hidden="true">○</span>
+          </div>
+          <div className="activity-row">
+            <span>Quiz Practice</span>
+            <span className="activity-indicator" aria-hidden="true">○</span>
+          </div>
+        </div>
+
         <div className="placeholder-actions">
           <button type="button" className="button-primary">
             {content.primary}
