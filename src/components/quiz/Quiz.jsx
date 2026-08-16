@@ -1,22 +1,28 @@
-import { useState } from 'react'
-import questions from '../../data/questions.json'
+import { useLanguage } from '../../context/AppContext.jsx'
 
-// Module 3 owns this file and this folder.
-// TODO: difficulty pointer logic — start medium, correct -> harder, wrong -> easier.
-// Show a visual difficulty indicator so judges can see it adapting live.
 export default function Quiz() {
-  const [difficulty, setDifficulty] = useState('medium')
-  const current = questions.find((q) => q.difficulty === difficulty) || questions[0]
+  const { strings } = useLanguage()
+  const content = strings.app.quiz
 
   return (
-    <div>
-      <p>Difficulty: <strong>{difficulty}</strong></p>
-      <h3>{current.text}</h3>
-      <ul>
-        {current.options.map((opt) => (
-          <li key={opt}>{opt}</li>
-        ))}
-      </ul>
-    </div>
+    <section className="module-placeholder">
+      <div className="placeholder-card">
+        <div className="placeholder-icon" aria-hidden="true">
+          🧠
+        </div>
+
+        <div className="placeholder-copy">
+          <p className="eyebrow">{strings.nav.quiz}</p>
+          <h2>{content.title}</h2>
+          <p>{content.description}</p>
+        </div>
+
+        <div className="placeholder-actions">
+          <button type="button" className="button-primary">
+            {content.primary}
+          </button>
+        </div>
+      </div>
+    </section>
   )
 }
