@@ -7,13 +7,24 @@ import chaptersData from '../../data/chapters.json'
 export default function Reader() {
   const [chapters, setChapters] = useState([])
   const [currentChapterIndex, setCurrentChapterIndex] = useState(0)
-  const [annotations, setAnnotations] = useState([])
+  const [annotations, setAnnotations] = useState(() => {
+    try {
+      const saved = localStorage.getItem('adaptive-learn-annotations')
+      return saved ? JSON.parse(saved) : []
+    } catch {
+      return []
+    }
+  })
 
   const { selectionInfo, clearSelection } = useTextSelection()
 
   useEffect(() => {
     setChapters(chaptersData)
   }, [])
+
+  useEffect(() => {
+    localStorage.setItem('adaptive-learn-annotations', JSON.stringify(annotations))
+  }, [annotations])
 
   const handleSaveAnnotation = ({ type, content }) => {
     if (!selectionInfo) return

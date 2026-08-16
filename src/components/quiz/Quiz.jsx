@@ -9,10 +9,35 @@ const TOTAL_QUESTIONS = 6;
 export default function Quiz() {
   const [difficultyIndex, setDifficultyIndex] = useState(1); // start at "medium"
   const [currentQuestion, setCurrentQuestion] = useState(null);
-  const [answeredIds, setAnsweredIds] = useState([]);
-  const [score, setScore] = useState(0);
+  const [answeredIds, setAnsweredIds] = useState(() => {
+    try {
+      const saved = localStorage.getItem('adaptive-learn-quiz-progress')
+      if (!saved) return []
+      const parsed = JSON.parse(saved)
+      return Array.isArray(parsed?.answeredIds) ? parsed.answeredIds : []
+    } catch {
+      return []
+    }
+  });
+  const [score, setScore] = useState(() => {
+    try {
+      const saved = localStorage.getItem('adaptive-learn-quiz-progress')
+      if (!saved) return 0
+      const parsed = JSON.parse(saved)
+      return typeof parsed?.score === 'number' ? parsed.score : 0
+    } catch {
+      return 0
+    }
+  });
   const [feedback, setFeedback] = useState(null); // "correct" | "incorrect" | null
   const [quizOver, setQuizOver] = useState(false);
+
+  useEffect(() => {
+    localStorage.setItem(
+      'adaptive-learn-quiz-progress',
+      JSON.stringify({ score, answeredIds })
+    )
+  }, [score, answeredIds])
 
   function pickNextQuestion(difficultyIdx, answeredIds) {
     const targetDifficulty = DIFFICULTY_LEVELS[difficultyIdx];
