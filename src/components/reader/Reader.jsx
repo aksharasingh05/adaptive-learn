@@ -1,10 +1,12 @@
 import { useState, useEffect } from 'react'
+import { useLanguage } from '../../context/AppContext.jsx'
 import Chapter from './chapter'
 import SelectionToolbar from './selectiontoolbar'
 import useTextSelection from './usetextselection'
 import chaptersData from '../../data/chapters.json'
 
 export default function Reader() {
+  const { addAnnotation } = useLanguage()
   const [chapters, setChapters] = useState([])
   const [currentChapterIndex, setCurrentChapterIndex] = useState(0)
   const [annotations, setAnnotations] = useState(() => {
@@ -41,6 +43,17 @@ export default function Reader() {
     }
 
     setAnnotations((prev) => [...prev, newAnnotation])
+
+    if (type === 'question') {
+      addAnnotation({
+        id: crypto.randomUUID(),
+        type: 'question',
+        text: content,
+        chapterId: chapters[currentChapterIndex]?.id,
+        author: 'You',
+        createdAt: Date.now(),
+      })
+    }
   }
 
   if (chapters.length === 0) return <p>Loading chapters...</p>
