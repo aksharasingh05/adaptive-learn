@@ -1,5 +1,65 @@
 [
-  { "id": "q1", "difficulty": "medium", "text": "Placeholder medium question?", "options": ["A", "B", "C", "D"], "answer": "A" },
-  { "id": "q2", "difficulty": "easy", "text": "Placeholder easy question?", "options": ["A", "B", "C", "D"], "answer": "B" },
-  { "id": "q3", "difficulty": "hard", "text": "Placeholder hard question?", "options": ["A", "B", "C", "D"], "answer": "C" }
+  {
+    "id": "q1",
+    "difficulty": "easy",
+    "text": "Which planet is known as the Red Planet?",
+    "options": ["Mars", "Venus", "Jupiter", "Mercury"],
+    "answer": 0
+  },
+  {
+    "id": "q2",
+    "difficulty": "easy",
+    "text": "What gas do plants absorb from the atmosphere?",
+    "options": ["Oxygen", "Carbon dioxide", "Nitrogen", "Helium"],
+    "answer": 1
+  },
+  {
+    "id": "q3",
+    "difficulty": "easy",
+    "text": "How many sides does a triangle have?",
+    "options": ["3", "4", "5", "6"],
+    "answer": 0
+  },
+  {
+    "id": "q4",
+    "difficulty": "medium",
+    "text": "Which organ pumps blood throughout the body?",
+    "options": ["Lungs", "Brain", "Heart", "Liver"],
+    "answer": 2
+  },
+  {
+    "id": "q5",
+    "difficulty": "medium",
+    "text": "What is the capital city of Japan?",
+    "options": ["Seoul", "Beijing", "Tokyo", "Kyoto"],
+    "answer": 2
+  },
+  {
+    "id": "q6",
+    "difficulty": "medium",
+    "text": "Which force keeps objects on the ground?",
+    "options": ["Magnetism", "Gravity", "Friction", "Electricity"],
+    "answer": 1
+  },
+  {
+    "id": "q7",
+    "difficulty": "hard",
+    "text": "What is the chemical symbol for gold?",
+    "options": ["Ag", "Au", "Go", "Gd"],
+    "answer": 1
+  },
+  {
+    "id": "q8",
+    "difficulty": "hard",
+    "text": "Which process allows plants to make their own food?",
+    "options": ["Respiration", "Photosynthesis", "Fermentation", "Transpiration"],
+    "answer": 1
+  },
+  {
+    "id": "q9",
+    "difficulty": "hard",
+    "text": "Which ocean is the largest on Earth?",
+    "options": ["Atlantic Ocean", "Indian Ocean", "Pacific Ocean", "Arctic Ocean"],
+    "answer": 2
+  }
 ]

@@ -121,8 +121,8 @@ export default function App() {
       </div>
 
       <main className="main-panel">
-        {view === 'reader' && <Placeholder type="reader" strings={strings} />}
-        {view === 'quiz' && <Placeholder type="quiz" strings={strings} />}
+        {view === 'reader' && <Reader />}
+        {view === 'quiz' && <Quiz />}
         {view === 'community' && <Community />}
       </main>
     </div>
