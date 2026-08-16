@@ -6,6 +6,29 @@ export default function SelectionToolbar({ selectionInfo, onSave, onClose }) {
 
   if (!selectionInfo) return null;
 
+  const toolbarHeight = mode ? 88 : 52;
+  const toolbarWidth = mode ? 260 : 220;
+  const gap = 12;
+  const margin = 8;
+  const selectedTop = selectionInfo.top ?? 0;
+  const selectedLeft = selectionInfo.left ?? 0;
+
+  const topBelowSelection = selectedTop + gap + toolbarHeight;
+  const placeBelow = topBelowSelection <= window.innerHeight - margin;
+  const preferredTop = placeBelow ? selectedTop + gap : selectedTop - toolbarHeight - gap;
+  const clampedTop = Math.min(
+    Math.max(preferredTop, margin),
+    Math.max(margin, window.innerHeight - toolbarHeight - margin)
+  );
+
+  const preferredLeft = selectedLeft + toolbarWidth > window.innerWidth - margin
+    ? window.innerWidth - toolbarWidth - margin
+    : selectedLeft;
+  const clampedLeft = Math.min(
+    Math.max(preferredLeft, margin),
+    Math.max(margin, window.innerWidth - toolbarWidth - margin)
+  );
+
   const handleHighlight = () => {
     onSave({ type: "highlight", content: "" });
     reset();
@@ -27,8 +50,8 @@ export default function SelectionToolbar({ selectionInfo, onSave, onClose }) {
     <div
       className="absolute z-50 bg-white border border-gray-200 rounded-xl shadow-lg p-2"
       style={{
-        top: selectionInfo.top - 56,
-        left: selectionInfo.left,
+        top: clampedTop,
+        left: clampedLeft,
       }}
     >
       {!mode && (

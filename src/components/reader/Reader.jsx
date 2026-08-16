@@ -45,6 +45,11 @@ export default function Reader() {
     setAnnotations((prev) => [...prev, newAnnotation])
 
     if (type === 'question') {
+      console.log('Reader handleSaveAnnotation => question', {
+        content,
+        chapterId: chapters[currentChapterIndex]?.id,
+        selectionInfo,
+      })
       addAnnotation({
         id: crypto.randomUUID(),
         type: 'question',

@@ -15,10 +15,15 @@ export function AppProvider({ children }) {
   const [annotations, setAnnotations] = useState([])
 
   const addAnnotation = useCallback((entry) => {
-    setAnnotations((prev) => [
-      ...prev,
-      { id: crypto.randomUUID(), createdAt: Date.now(), ...entry },
-    ])
+    console.log('AppContext addAnnotation', entry)
+    setAnnotations((prev) => {
+      const next = [
+        ...prev,
+        { id: crypto.randomUUID(), createdAt: Date.now(), ...entry },
+      ]
+      console.log('AppContext next annotations', next)
+      return next
+    })
   }, [])
 
   const strings = STRINGS[lang]
