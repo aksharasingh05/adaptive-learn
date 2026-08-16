@@ -24,3 +24,4 @@ npm run dev
 - `annotations`, `addAnnotation` — shared highlight/note/question array
 
 Build against the mock data in `src/data/` first — Module 5 swaps in real content once modules 2-4 work individually.
+Testing auto-deploy
