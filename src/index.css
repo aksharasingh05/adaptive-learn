@@ -342,6 +342,9 @@ svg {
   font-weight: 800;
   letter-spacing: 0.12em;
   text-transform: uppercase;
+  text-decoration: none;
+  font-variant-ligatures: none;
+  font-feature-settings: 'liga' 0, 'calt' 0;
 }
 
 .placeholder-copy h2 {
@@ -382,6 +385,9 @@ svg {
   color: var(--muted);
   font-size: 0.78rem;
   line-height: 1.4;
+  text-decoration: none;
+  font-variant-ligatures: none;
+  font-feature-settings: 'liga' 0, 'calt' 0;
 }
 
 .activity-indicator {
@@ -534,5 +540,39 @@ svg {
   .button-primary,
   .button-secondary {
     width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .eyebrow,
+  .activity-row,
+  .activity-row span,
+  .activity-indicator {
+    text-decoration: none !important;
+    border: none !important;
+    border-top: none !important;
+    border-bottom: none !important;
+    letter-spacing: 0.08em !important;
+    font-variant-ligatures: none;
+    font-feature-settings: 'liga' 0, 'calt' 0;
+  }
+
+  .eyebrow::before,
+  .eyebrow::after,
+  .activity-row::before,
+  .activity-row::after {
+    content: none !important;
+    display: none !important;
+  }
+
+  .eyebrow {
+    text-transform: uppercase;
+    font-family: var(--font-body);
+    line-height: 1.4;
+  }
+
+  .activity-row {
+    text-transform: none;
+    letter-spacing: 0;
   }
 }
