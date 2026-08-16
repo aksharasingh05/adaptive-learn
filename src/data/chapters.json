@@ -1,18 +1,29 @@
 [
   {
     "id": "ch1",
-    "title": "Chapter 1: Getting Started",
+    "title": "Chapter 1: How Learning Actually Works",
     "paragraphs": [
-      "This is the first paragraph of chapter one. Replace with real content.",
-      "This is the second paragraph. Selection + annotation should work on text like this."
+      "Most people think learning means reading something once and remembering it. In reality, your brain forms strong memories through repeated, spaced exposure to information rather than a single pass.",
+      "This is why cramming the night before an exam feels productive but rarely sticks. The information goes into short-term memory but never gets consolidated into long-term memory.",
+      "Adaptive Learn is built around this idea. Instead of showing you the same material at the same pace as everyone else, it adjusts difficulty and repetition based on how you're actually performing."
     ]
   },
   {
     "id": "ch2",
-    "title": "Chapter 2: Going Deeper",
+    "title": "Chapter 2: Active Recall vs Passive Review",
     "paragraphs": [
-      "Placeholder paragraph for chapter two.",
-      "Another placeholder line to test multi-paragraph rendering."
+      "Highlighting a paragraph and re-reading it feels like studying, but research consistently shows it's one of the least effective methods for retention.",
+      "Active recall — testing yourself on material instead of just reviewing it — forces your brain to reconstruct the information, which is what actually strengthens memory.",
+      "Try selecting a sentence in this chapter and asking yourself a question about it before moving on. That small habit compounds significantly over a semester."
+    ]
+  },
+  {
+    "id": "ch3",
+    "title": "Chapter 3: Why Annotations Matter",
+    "paragraphs": [
+      "When you highlight, take a note, or ask a question directly on the text you're reading, you're creating a personal record of what confused you and what stood out.",
+      "Over time, these annotations become more valuable than the original text itself — they're a map of your own understanding, built chapter by chapter.",
+      "This is the core idea behind the annotation toolbar: learning isn't just reading, it's a conversation you have with the material."
     ]
   }
 ]
