@@ -31,6 +31,7 @@ export default function App() {
           <div className="brand-copy">
             <h1>{strings.app.title}</h1>
             <p>{strings.app.subtitle}</p>
+            <div className="trust-badge">ADAPTIVE • BILINGUAL • FREE</div>
           </div>
         </div>
 

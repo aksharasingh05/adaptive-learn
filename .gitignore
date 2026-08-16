@@ -2,3 +2,5 @@ node_modules/
 dist/
 .env
 .Ds_Storen
+.vercel
+.env*

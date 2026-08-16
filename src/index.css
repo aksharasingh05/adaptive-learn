@@ -109,6 +109,22 @@ svg {
   font-size: 0.82rem;
 }
 
+.trust-badge {
+  display: inline-flex;
+  align-items: center;
+  margin-top: 8px;
+  padding: 5px 9px;
+  border-radius: 999px;
+  background: var(--primary-soft);
+  border: 1px solid rgba(48, 87, 213, 0.12);
+  color: var(--primary-strong);
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
 .toolbar {
   display: flex;
   align-items: center;
@@ -241,6 +257,49 @@ svg {
   border-radius: 24px;
   overflow: hidden;
   isolation: isolate;
+}
+
+.placeholder-side-list {
+  width: min(100%, 320px);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 12px 10px;
+  background: var(--panel-soft);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  text-align: left;
+}
+
+.placeholder-side-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 7px 10px;
+  border-radius: 10px;
+  color: var(--muted);
+  font-size: 0.78rem;
+  line-height: 1.4;
+}
+
+.placeholder-side-row .status-dot {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 1.5px solid var(--line-strong);
+  color: var(--primary-strong);
+  font-size: 0.68rem;
+  font-weight: 800;
+  background: var(--panel);
+}
+
+.placeholder-side-row.complete .status-dot {
+  border-color: rgba(48, 87, 213, 0.18);
+  background: var(--primary-soft);
 }
 
 .placeholder-card::before {
