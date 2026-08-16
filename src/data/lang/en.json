@@ -7,6 +7,7 @@
   "app": {
     "title": "Adaptive Learn",
     "subtitle": "Learn at your own pace",
+    "badge": "ADAPTIVE • BILINGUAL • FREE",
     "languageLabel": "Language",
     "language": {
       "en": "English",
@@ -33,5 +34,11 @@
       "description": "Discuss notes, annotations, and key takeaways with other learners in a collaborative learning space.",
       "primary": "Join the Discussion"
     }
+  }
+  ,
+  "activity": {
+    "chapter1": "Chapter 1",
+    "chapter2": "Chapter 2",
+    "quizPractice": "Quiz Practice"
   }
 }

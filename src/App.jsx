@@ -9,6 +9,52 @@ const moduleIcons = {
   community: '👥',
 }
 
+function Placeholder({ type, strings }) {
+  const content = strings.app[type]
+
+  return (
+    <section className="module-placeholder">
+      <div className="placeholder-card">
+        <div className="placeholder-icon" aria-hidden="true">
+          {moduleIcons[type]}
+        </div>
+
+        <div className="placeholder-copy">
+          <p className="eyebrow">{strings.nav[type]}</p>
+          <h2>{content.title}</h2>
+          <p>{content.description}</p>
+        </div>
+
+        <div className="activity-list" aria-label="Recent activity preview">
+          <div className="activity-row">
+            <span>{strings.activity.chapter1}</span>
+            <span className="activity-indicator complete" aria-hidden="true">✓</span>
+          </div>
+          <div className="activity-row">
+            <span>{strings.activity.chapter2}</span>
+            <span className="activity-indicator" aria-hidden="true">○</span>
+          </div>
+          <div className="activity-row">
+            <span>{strings.activity.quizPractice}</span>
+            <span className="activity-indicator" aria-hidden="true">○</span>
+          </div>
+        </div>
+
+        <div className="placeholder-actions">
+          <button type="button" className="button-primary">
+            {content.primary}
+          </button>
+          {content.secondary && (
+            <button type="button" className="button-secondary">
+              {content.secondary}
+            </button>
+          )}
+        </div>
+      </div>
+    </section>
+  )
+}
+
 export default function App() {
   const { strings, view, setView, lang, setLang } = useLanguage()
 
@@ -31,7 +77,7 @@ export default function App() {
           <div className="brand-copy">
             <h1>{strings.app.title}</h1>
             <p>{strings.app.subtitle}</p>
-            <div className="trust-badge">ADAPTIVE • BILINGUAL • FREE</div>
+            <div className="trust-badge">{strings.app.badge}</div>
           </div>
         </div>
 
@@ -75,9 +121,9 @@ export default function App() {
       </div>
 
       <main className="main-panel">
-        {view === 'reader' && <Reader />}
-        {view === 'quiz' && <Quiz />}
-        {view === 'community' && <Community />}
+        {view === 'reader' && <Placeholder type="reader" strings={strings} />}
+        {view === 'quiz' && <Placeholder type="quiz" strings={strings} />}
+        {view === 'community' && <Placeholder type="community" strings={strings} />}
       </main>
     </div>
   )
