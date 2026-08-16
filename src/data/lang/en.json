@@ -5,6 +5,40 @@
     "community": "Community"
   },
   "app": {
-    "title": "Hackathon App"
+    "title": "Adaptive Learn",
+    "subtitle": "Learn at your own pace",
+    "badge": "ADAPTIVE • BILINGUAL • FREE",
+    "languageLabel": "Language",
+    "language": {
+      "en": "English",
+      "hi": "हिन्दी"
+    },
+    "highlights": {
+      "path": "Adaptive path",
+      "focus": "Focused learning",
+      "progress": "Progress-led"
+    },
+    "reader": {
+      "title": "Start Learning",
+      "description": "Read curated learning material, capture ideas, and add notes or highlights to deepen your understanding.",
+      "primary": "Open Reader",
+      "secondary": "Browse Chapters"
+    },
+    "quiz": {
+      "title": "Test Your Knowledge",
+      "description": "Adaptive quizzes will appear here to check your understanding and guide your next step in the learning journey.",
+      "primary": "Start Quiz"
+    },
+    "community": {
+      "title": "Learn Together",
+      "description": "Discuss notes, annotations, and key takeaways with other learners in a collaborative learning space.",
+      "primary": "Join the Discussion"
+    }
+  }
+  ,
+  "activity": {
+    "chapter1": "Chapter 1",
+    "chapter2": "Chapter 2",
+    "quizPractice": "Quiz Practice"
   }
 }
