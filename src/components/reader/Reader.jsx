@@ -1,25 +1,66 @@
-import chapters from '../../data/chapters.json'
-import { useLanguage } from '../../context/AppContext.jsx'
+import React, { useState, useEffect } from "react";
+import Chapter from "./chapter";
+import SelectionToolbar from "./selectiontoolbar";
+import useTextSelection from "./usetextselection";
+import chaptersData from "../../data/chapters.json";
 
-// Module 2 owns this file and this folder.
-// TODO: render each paragraph as its own component (not one text blob),
-// wire up window.getSelection() -> floating toolbar (Highlight / Note / Ask Question),
-// and call addAnnotation() from AppContext to store results.
 export default function Reader() {
-  const { addAnnotation } = useLanguage()
+  const [chapters, setChapters] = useState([]);
+  const [currentChapterIndex, setCurrentChapterIndex] = useState(0);
+  const [annotations, setAnnotations] = useState([]); // TODO: swap for AppContext later
+
+  const { selectionInfo, clearSelection } = useTextSelection();
+
+  useEffect(() => {
+    setChapters(chaptersData);
+  }, []);
+
+  const handleSaveAnnotation = ({ type, content }) => {
+    if (!selectionInfo) return;
+    const newAnnotation = {
+      id: crypto.randomUUID(),
+      chapterId: chapters[currentChapterIndex]?.id,
+      paragraphId: selectionInfo.paragraphId,
+      type,
+      selectedText: selectionInfo.text,
+      content,
+      author: "You",
+      timestamp: Date.now(),
+    };
+    setAnnotations((prev) => [...prev, newAnnotation]);
+  };
+
+  if (chapters.length === 0) return <p>Loading chapters...</p>;
+
+  const currentChapter = chapters[currentChapterIndex];
 
   return (
-    <div>
-      {chapters.map((chapter) => (
-        <section key={chapter.id}>
-          <h2>{chapter.title}</h2>
-          {chapter.paragraphs.map((p, i) => (
-            <p key={i}>{p}</p>
-          ))}
-        </section>
-      ))}
-      {/* placeholder call so addAnnotation isn't flagged unused; remove once wired up */}
-      <button style={{ display: 'none' }} onClick={() => addAnnotation({ type: 'note', text: '' })} />
+    <div className="reader-container" style={{ position: "relative" }}>
+      <div className="chapter-nav" style={{ marginBottom: "1rem" }}>
+        <button
+          disabled={currentChapterIndex === 0}
+          onClick={() => setCurrentChapterIndex((i) => i - 1)}
+        >
+          Previous
+        </button>
+        <span style={{ margin: "0 1rem" }}>
+          Chapter {currentChapterIndex + 1} of {chapters.length}
+        </span>
+        <button
+          disabled={currentChapterIndex === chapters.length - 1}
+          onClick={() => setCurrentChapterIndex((i) => i + 1)}
+        >
+          Next
+        </button>
+      </div>
+
+      <Chapter chapter={currentChapter} annotations={annotations} />
+
+      <SelectionToolbar
+        selectionInfo={selectionInfo}
+        onSave={handleSaveAnnotation}
+        onClose={clearSelection}
+      />
     </div>
-  )
+  );
 }

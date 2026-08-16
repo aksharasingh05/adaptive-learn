@@ -1,0 +1,31 @@
+[
+  {
+    "chapterId": "ch1",
+    "title": "Chapter 1: The Beginning",
+    "paragraphs": [
+      {
+        "id": "ch1-p1",
+        "text": "It was a quiet morning when everything began to change."
+      },
+      {
+        "id": "ch1-p2",
+        "text": "The village had never seen anything like it before."
+      },
+      {
+        "id": "ch1-p3",
+        "text": "Nobody could have predicted what would happen next."
+      }
+    ]
+  },
+  {
+    "chapterId": "ch2",
+    "title": "Chapter 2: The Discovery",
+    "paragraphs": [
+      {
+        "id": "ch2-p1",
+        "text": "Deep in the forest, a hidden path revealed itself."
+      },
+      { "id": "ch2-p2", "text": "Every step forward brought new questions." }
+    ]
+  }
+]
